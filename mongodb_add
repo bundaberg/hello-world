@@ -40,3 +40,11 @@ cursor = wordsColl.find({word: {$in: ['tweet','google', 'selfie']}},
 printjson(cursor.toArray());
 
 #New Trial
+
+mongo = new Mongo('localhost');
+wordsDB = mongo.getDB('words');
+wordsDB.runCommand( { getLastError: 1, w: 1, j: true, wtimeout: 1000 } );
+wordsColl = wordsDB.getCollection('word_stats');
+wordsColl.insert(same);
+wordsColl.insert(side);
+wordsColl.insert(style);
