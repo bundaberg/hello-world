@@ -38,3 +38,5 @@ wordsColl.insert([tweet, google]);
 cursor = wordsColl.find({word: {$in: ['tweet','google', 'selfie']}},
                         {word:1});
 printjson(cursor.toArray());
+
+#New Trial
